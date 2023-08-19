@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  aspnetredis:
+    image: aspnetredis
+    build:
+      context: .
+      dockerfile: AspNetRedis/Dockerfile
+    ports:
+      - 5000:80
+      - 5001:443
+    environment:
+      - "REDIS_HOST=redis-13329.c13.us-east-1-3.ec2.cloud.redislabs.com"
+      - "REDIS_PORT=13329"
+      - "REDIS_PASSWORD=pMfvEBpKrVkzgPJ5ZppiyXnaKIU0Y23Z"
